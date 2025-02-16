@@ -9,6 +9,7 @@ document.querySelectorAll('#button').forEach(link => {
         currentCategory = link.dataset.category;
         categoryUrl = `https://swapi.dev/api/${currentCategory}`;
         parent.innerHTML = "";
+        document.querySelector('.load-more').classList.remove('hidden');
         loadPeople();
     });
 })
