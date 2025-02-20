@@ -4,32 +4,35 @@ let currentCategory = 'people'
 
 
 document.querySelectorAll('#button').forEach(link => {
-    link.addEventListener('click', (event) => {
+    link.addEventListener('click', async (event) => {
         event.preventDefault()
         currentCategory = link.dataset.category;
         categoryUrl = `https://swapi.dev/api/${currentCategory}`;
         parent.innerHTML = "";
         document.querySelector('.load-more').classList.remove('hidden');
-        loadPeople();
+        await loadPeople();
     });
 })
 
-document.querySelector('.load-more').addEventListener('click', () => {
-    loadPeople();
+document.querySelector('.load-more').addEventListener('click', async () => {
+    await loadPeople();
 });
 
-function loadPeople() {
-    fetch(categoryUrl)
-        .then(response => response.json())
-        .then(data => {
-            categoryUrl = data.next;
-            if (data.next) {
-                document.querySelector('.people').classList.remove('hidden')
-            } else {
-                document.querySelector('.load-more').classList.add('hidden')
-            }
-            showPeople(data.results)
-        })
+async function loadPeople() {
+    try {
+        const response = await fetch(categoryUrl);
+        const data = await response.json();
+        categoryUrl = data.next;
+
+        if (data.next) {
+            document.querySelector('.people').classList.remove('hidden')
+        } else {
+            document.querySelector('.load-more').classList.add('hidden')
+        }
+        showPeople(data.results);
+    } catch (error) {
+        console.error(`Loading people error: ${error}`);
+    }
 }
 
 /**
@@ -59,11 +62,14 @@ function showPeople(data) {
     })
 }
 
-function fetchFullDetailsFromApp(url) {
-    fetch(url)
-        .then(response => response.json())
-        .then(object => showFullDetails(object))
-        .catch(error => console.error("Error fetching full details:", error));
+async function fetchFullDetailsFromApp(url) {
+    try {
+        const response = await fetch(url);
+        const object = await response.json();
+        showFullDetails(object);
+    } catch (error) {
+        console.error(`Fetching error: ${error}`);
+    }
 }
 
 function showFullDetails(object) {
