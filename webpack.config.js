@@ -18,7 +18,7 @@ export default {
     },
     output: {
         filename: 'app.[contenthash].js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'docs')
     },
     module: {
         rules: [
