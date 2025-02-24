@@ -1,7 +1,6 @@
 import '@css/style.css';
 import '@css/background.css';
 import '@img/nav_logo.png';
-import '@img/favicon.svg';
 
 import _ from 'lodash';
 
