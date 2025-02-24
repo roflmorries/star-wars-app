@@ -2,6 +2,7 @@ main {
   width: 80%;
   display: flex;
   justify-self: center;
+  margin: 0 auto;
 }
 .nav {
   width: 100%;
@@ -48,6 +49,7 @@ html body .hidden {
   backdrop-filter: blur( 9px );
   -webkit-backdrop-filter: blur( 9px );
   padding: 50px;
+  margin: 0 auto;
 }
 
 .load__button {

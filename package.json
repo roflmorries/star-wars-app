@@ -2,9 +2,8 @@
   "name": "star-wars-app",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "type": "module",
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/roflmorries/star-wars-app.git"
@@ -18,18 +17,13 @@
   "homepage": "https://github.com/roflmorries/star-wars-app#readme",
   "description": "",
   "devDependencies": {
-    "autoprefixer": "^10.4.20",
-    "del": "^8.0.0",
-    "gulp": "^5.0.0",
-    "gulp-autoprefixer": "^9.0.0",
-    "gulp-babel": "^8.0.0",
-    "gulp-babel-minify": "^0.5.2",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-imagemin": "^9.1.0",
-    "gulp-postcss": "^10.0.0",
-    "gulp-sass": "^6.0.0",
-    "gulp-sourcemaps": "^3.0.0",
-    "sass": "^1.85.0"
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.3",
+    "sass": "^1.85.0",
+    "sass-loader": "^16.0.5",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
   }
 }
