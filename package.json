@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
-  "scripts": {},
+  "scripts": {
+    "lint": "eslint src --ext .js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/roflmorries/star-wars-app.git"
@@ -17,13 +19,32 @@
   "homepage": "https://github.com/roflmorries/star-wars-app#readme",
   "description": "",
   "devDependencies": {
+    "@babel/core": "^7.26.9",
+    "@babel/preset-env": "^7.26.9",
+    "autoprefixer": "^10.4.20",
+    "babel-loader": "^9.2.1",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^7.1.2",
+    "cssnano": "^7.0.6",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-webpack-plugin": "^4.2.0",
     "html-webpack-plugin": "^5.6.3",
+    "image-minimizer-webpack-plugin": "^4.1.3",
+    "imagemin": "^9.0.0",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^10.0.0",
+    "imagemin-svgo": "^11.0.1",
+    "postcss": "^8.5.3",
+    "postcss-loader": "^8.1.1",
     "sass": "^1.85.0",
     "sass-loader": "^16.0.5",
     "style-loader": "^4.0.0",
     "webpack": "^5.98.0",
+    "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^6.0.1"
   }
 }
